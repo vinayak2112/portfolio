@@ -1,24 +1,102 @@
-import React from 'react'
-import Box from './Box'
-import image1 from '../images/p1.png'
-import image2 from '../images/p2.png'
-import image3 from '../images/p3.png'
+import React from "react";
 
 function Services() {
+  const professionalProjects = [
+    {
+      title: "Fellowship Application Portal",
+      company: "Teach For India",
+      tech: "React • Node.js • MongoDB • MaterialUI",
+      description:
+        "Full-stack application portal with reusable components, PDF CV downloads, custom modals, Salesforce integration, and video proctoring with transcription pipeline.",
+      highlights: [
+        "20% faster load time",
+        "Salesforce sync",
+        "Video proctoring",
+      ],
+    },
+    {
+      title: "Volunteer Management System",
+      company: "Teach For India",
+      tech: "React • Algolia • FormAssembly",
+      description:
+        "Serverless React app with Algolia integration for fast search and filtering of volunteer opportunities by city, cluster, availability, and subjects.",
+      highlights: ["Fast search", "Pre-filled forms", "Real-time filtering"],
+    },
+    {
+      title: "Impacted Internship Program",
+      company: "Teach For India",
+      tech: "React • Node.js • MongoDB",
+      description:
+        "Referral-only application system where opportunities are accessible via special reference keys shared with referred candidates.",
+      highlights: ["Secure access", "Role management", "Streamlined flow"],
+    },
+  ];
+
+  const personalProjects = [
+    {
+      title: "Text Utils",
+      description:
+        "Text analysis tool for word count, character count, and removing extra spaces.",
+      link: "https://vinnu9112.github.io/text-utils/",
+    },
+    {
+      title: "To Do List",
+      description: "Task management React app for organizing incomplete tasks.",
+      link: "https://vinnu9112.github.io/to-do-list/",
+    },
+    {
+      title: "BMI Calculator",
+      description:
+        "Body Mass Index calculator relating measurements to health and fitness.",
+      link: "https://vinnu9112.github.io/bmi-calculator/",
+    },
+  ];
+
   return (
-    <div id='services'>
-        <div className="s-heading">
-            <h1>Projects</h1>
-            <p>Here are a few of my hosted projects</p>
-        </div>
-        <div className="b-container">
-            <Box image={image1} title='Text Utils' text='Text Utils gives you a way to analyze your text quickly and efficiently. Be it word count, character count or to remove extra spaces.' link='https://vinnu9112.github.io/text-utils/' alt='image1' button='Visit Site' />
-            <Box image={image2} title='To Do List' text='An static React app which can help you list down your new or incomplete tasks and can be used as a tool for time management and organization.' link='https://vinnu9112.github.io/to-do-list/' alt='image2' button='Visit Site'/>
-            <Box image={image3} title='BMI Calculator' text='Body Mass Index Calculator can help you learn what this measurement means and how it relates to your health and fitness.' link='https://vinnu9112.github.io/bmi-calculator/' alt='image3' button='Visit Site' />
-            {/* <Box image={image3} text='You can see my all projects in the form of repositories on GitHub.' link='https://github.com/vinnu9112' alt='image3' button='All Projects' /> */}
-        </div>
+    <div id="services">
+      <div className="s-heading">
+        <h1>Projects</h1>
+        <p>Professional work and personal projects</p>
+      </div>
+
+      <h2 className="project-category">Professional Projects</h2>
+      <div className="pro-container">
+        {professionalProjects.map((project, index) => (
+          <div className="pro-card" key={index}>
+            <div className="pro-header">
+              <h3>{project.title}</h3>
+              <span className="pro-company">{project.company}</span>
+            </div>
+            <span className="pro-tech">{project.tech}</span>
+            <p>{project.description}</p>
+            <div className="pro-highlights">
+              {project.highlights.map((h, i) => (
+                <span key={i} className="highlight-tag">
+                  {h}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <h2 className="project-category">Just for Fun</h2>
+      <div className="personal-container">
+        {personalProjects.map((project, index) => (
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noreferrer"
+            className="personal-card"
+            key={index}
+          >
+            <h3>{project.title}</h3>
+            <p>{project.description}</p>
+          </a>
+        ))}
+      </div>
     </div>
-  )
+  );
 }
 
-export default Services
+export default Services;

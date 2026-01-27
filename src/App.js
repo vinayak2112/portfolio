@@ -1,19 +1,21 @@
 import Header from "./components/Header";
 import Features from "./components/Features";
+import Skills from "./components/Skills";
+import Experience from "./components/Experience";
 import Services from "./components/Services";
+import Achievements from "./components/Achievements";
 import Subscribe from "./components/Subscribe";
 
 function App() {
   return (
     <>
-      <Header/>
-      <div className="f-heading">
-        <h1>About Me</h1>
-        <p>Introduction</p>
-      </div>
-      <Features/>
-      <Services/> 
-      <Subscribe/>
+      <Header />
+      <Features />
+      <Skills />
+      <Experience />
+      <Services />
+      <Achievements />
+      <Subscribe />
     </>
   );
 }
