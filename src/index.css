@@ -52,12 +52,7 @@ nav {
 nav ul {
   display: flex;
 }
-.active {
-  background-color: #d0ff00;
-  color: #000000;
-  box-shadow: 5px 10px 30px rgba(189, 198, 64, 0.411);
-  transition: all ease 0.2s;
-}
+/* Active nav link styling - using specific selector to avoid conflicts */
 nav ul li a {
   font-family: calibri;
   height: 40px;
@@ -1102,7 +1097,7 @@ nav .menu-btn,
     padding-left: 20px;
   }
   .timeline-dot {
-    left: -26px;
+    left: -25px;
     width: 10px;
     height: 10px;
   }
