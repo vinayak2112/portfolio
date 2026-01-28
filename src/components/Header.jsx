@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "./Navbar";
+import { personalInfo } from "../data/information";
 
 function Header() {
   return (
@@ -7,19 +8,16 @@ function Header() {
       <Navbar />
       <div className="name">
         <h1>
-          Hello, my name is <span>Vinayak Nandikole</span>
+          Hello, my name is <span>{personalInfo.name}</span>
         </h1>
 
-        <h2 className="details">Full Stack Developer (MERN)</h2>
+        <h2 className="details">{personalInfo.title}</h2>
 
-        <p className="details">
-          Building scalable web applications, backend systems, and real-world
-          solutions used in production.
-        </p>
+        <p className="details">{personalInfo.tagline}</p>
 
         <div className="header-btns">
           <a
-            href="https://github.com/vinnu9112"
+            href={personalInfo.github}
             target="_blank"
             rel="noreferrer"
             className="cv-btn"
@@ -28,7 +26,7 @@ function Header() {
           </a>
 
           <a
-            href="https://www.linkedin.com/in/vinayak-nandikole"
+            href={personalInfo.linkedin}
             target="_blank"
             rel="noreferrer"
             className="cv-btn1"

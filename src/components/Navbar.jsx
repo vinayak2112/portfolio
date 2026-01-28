@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-scroll";
+import { navItems } from "../data/information";
 
 function Navbar() {
   const [activeSection, setActiveSection] = useState("main");
@@ -19,15 +20,7 @@ function Navbar() {
       }
 
       // Get all section positions
-      const sections = [
-        "main",
-        "features",
-        "skills",
-        "experience",
-        "services",
-        "achievements",
-        "subscribe",
-      ];
+      const sections = navItems.map((item) => item.to);
       const offset = 150;
 
       for (let i = sections.length - 1; i >= 0; i--) {
@@ -48,16 +41,6 @@ function Navbar() {
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const navItems = [
-    { to: "main", label: "Home" },
-    { to: "features", label: "About" },
-    { to: "skills", label: "Skills" },
-    { to: "experience", label: "Experience" },
-    { to: "services", label: "Projects" },
-    { to: "achievements", label: "Achievements" },
-    { to: "subscribe", label: "Contact" },
-  ];
 
   return (
     <>
