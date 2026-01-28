@@ -52,7 +52,7 @@ nav {
 nav ul {
   display: flex;
 }
-/* Active nav link styling - using specific selector to avoid conflicts */
+
 nav ul li a {
   font-family: calibri;
   height: 40px;
