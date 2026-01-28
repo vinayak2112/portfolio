@@ -13,6 +13,7 @@ function Services() {
         "Salesforce sync",
         "Video proctoring",
       ],
+      link: "https://apply.teachforindia.org/",
     },
     {
       title: "Volunteer Management System",
@@ -21,6 +22,7 @@ function Services() {
       description:
         "Serverless React app with Algolia integration for fast search and filtering of volunteer opportunities by city, cluster, availability, and subjects.",
       highlights: ["Fast search", "Pre-filled forms", "Real-time filtering"],
+      link: "https://volunteer.teachforindia.org/",
     },
     {
       title: "Impacted Internship Program",
@@ -29,6 +31,7 @@ function Services() {
       description:
         "Referral-only application system where opportunities are accessible via special reference keys shared with referred candidates.",
       highlights: ["Secure access", "Role management", "Streamlined flow"],
+      link: "https://impacted.teachforindia.org/?applicantID=1234",
     },
   ];
 
@@ -62,7 +65,13 @@ function Services() {
       <h2 className="project-category">Professional Projects</h2>
       <div className="pro-container">
         {professionalProjects.map((project, index) => (
-          <div className="pro-card" key={index}>
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noreferrer"
+            className="pro-card"
+            key={index}
+          >
             <div className="pro-header">
               <h3>{project.title}</h3>
               <span className="pro-company">{project.company}</span>
@@ -76,7 +85,7 @@ function Services() {
                 </span>
               ))}
             </div>
-          </div>
+          </a>
         ))}
       </div>
 

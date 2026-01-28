@@ -51,18 +51,21 @@ function Achievements() {
       title: "4 Star Coder",
       subtitle: "HackerRank C++",
       description: "Achieved 4-star rating in C++ problem solving",
+      link: "https://www.hackerrank.com/profile/vinayaknandikol1",
     },
     {
       icon: Icons.gfg,
       title: "Rank 15",
       subtitle: "GeeksForGeeks",
       description: "Institutional rank with 130+ problems solved",
+      link: "https://www.geeksforgeeks.org/profile/vinayaknandikole2158",
     },
     {
       icon: Icons.leetcode,
       title: "150+ Problems",
       subtitle: "LeetCode",
       description: "Proficiency in data structures and algorithms",
+      link: "https://leetcode.com/vinnnu/",
     },
   ];
 
@@ -71,11 +74,13 @@ function Achievements() {
       icon: Icons.aws,
       name: "AWS Academy Cloud Foundations",
       issuer: "Amazon Web Services",
+      link: "https://www.credly.com/badges/d4fdaec9-c26c-4381-8706-92132d15a086/linked_in_profile",
     },
     {
       icon: Icons.azure,
       name: "AZ-900: Microsoft Azure Fundamentals",
       issuer: "Microsoft",
+      link: "https://www.credly.com/badges/55674b14-9c97-4eb2-bee4-331f3869ba0f/linked_in_profile",
     },
   ];
 
@@ -91,12 +96,18 @@ function Achievements() {
           <h2>Coding Achievements</h2>
           <div className="ach-grid">
             {achievements.map((ach, index) => (
-              <div className="ach-card" key={index}>
+              <a
+                href={ach.link}
+                target="_blank"
+                rel="noreferrer"
+                className="ach-card"
+                key={index}
+              >
                 <span className="ach-icon">{ach.icon}</span>
                 <h3>{ach.title}</h3>
                 <span className="ach-subtitle">{ach.subtitle}</span>
                 <p>{ach.description}</p>
-              </div>
+              </a>
             ))}
           </div>
         </div>
@@ -105,13 +116,19 @@ function Achievements() {
           <h2>Certifications</h2>
           <div className="cert-grid">
             {certifications.map((cert, index) => (
-              <div className="cert-card" key={index}>
+              <a
+                href={cert.link}
+                target="_blank"
+                rel="noreferrer"
+                className="cert-card"
+                key={index}
+              >
                 <span className="cert-icon">{cert.icon}</span>
                 <div className="cert-info">
                   <h3>{cert.name}</h3>
                   <span>{cert.issuer}</span>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         </div>
