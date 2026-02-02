@@ -953,7 +953,34 @@ nav .menu-btn,
   color: rgba(255, 255, 255, 0.7);
   font-size: 0.9rem;
   line-height: 1.5;
+  margin-bottom: 0;
+}
+.personal-card-image {
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 8px;
   margin-bottom: 20px;
+}
+.personal-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.personal-card:hover .personal-card-image img {
+  transform: scale(1.05);
+}
+.personal-card-content h3 {
+  color: #ffffff;
+  font-size: 1.2rem;
+  margin: 0 0 10px 0;
+}
+.personal-card-content p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
 }
 
 /*****ACHIEVEMENTS SECTION****/

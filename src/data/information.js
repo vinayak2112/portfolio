@@ -123,7 +123,7 @@ export const projectsData = {
     {
       title: "Impacted Internship Program",
       company: "Teach For India",
-      tech: "React • Node.js • MongoDB",
+      tech: "React • Algolia • FormAssembly",
       description:
         "Referral-only application system where opportunities are accessible via special reference keys shared with referred candidates.",
       highlights: ["Secure access", "Role management", "Streamlined flow"],
@@ -136,17 +136,20 @@ export const projectsData = {
       description:
         "Text analysis tool for word count, character count, and removing extra spaces.",
       link: "https://vinnu9112.github.io/text-utils/",
+      image: "p1.png",
     },
     {
       title: "To Do List",
       description: "Task management React app for organizing incomplete tasks.",
       link: "https://vinnu9112.github.io/to-do-list/",
+      image: "p2.png",
     },
     {
       title: "BMI Calculator",
       description:
         "Body Mass Index calculator relating measurements to health and fitness.",
       link: "https://vinnu9112.github.io/bmi-calculator/",
+      image: "p3.png",
     },
   ],
 };
@@ -217,6 +220,11 @@ export const navItems = [
 export const contactData = {
   heading: "Contact Me",
   socialLinks: [
+    {
+      name: "phone",
+      url: "tel:+918830231912",
+      iconKey: "phone",
+    },
     {
       name: "instagram",
       url: "https://www.instagram.com/vinayak.nandikole",

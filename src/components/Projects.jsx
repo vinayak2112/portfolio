@@ -46,8 +46,18 @@ function Projects() {
             className="personal-card"
             key={index}
           >
-            <h3>{project.title}</h3>
-            <p>{project.description}</p>
+            {project.image && (
+              <div className="personal-card-image">
+                <img
+                  src={require(`../images/${project.image}`)}
+                  alt={project.title}
+                />
+              </div>
+            )}
+            <div className="personal-card-content">
+              <h3>{project.title}</h3>
+              <p>{project.description}</p>
+            </div>
           </a>
         ))}
       </div>
