@@ -3,7 +3,7 @@
 // ============================================
 export const personalInfo = {
   name: "Vinayak Nandikole",
-  title: "Full-Stack Engineer — React, Node.js, MongoDB",
+  title: "Full-Stack Engineer - React, Node.js, MongoDB",
   tagline:
     "Shipping production web platforms serving up to 50K applicants/year at Teach For India — turning tangled enterprise workflows (Salesforce, OAuth, Algolia) into clean user-facing flows.",
   github: "https://github.com/vinnu9112",
