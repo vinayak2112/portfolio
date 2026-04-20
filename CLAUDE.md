@@ -17,14 +17,52 @@ Two branches, two jobs:
 - `master` — the **source of truth**. All code changes (JSX, data, CSS, assets) live here. Never commit built output here.
 - `gh-pages` — a **deploy-only** branch containing the compiled `/build` output at the repo root. Do not edit by hand.
 
-**Every time we commit changes to `master`, the deploy flow is:**
-1. Commit the source changes on `master` and push (`git push origin master`).
-2. Run `npm run build` to regenerate `/build` from the latest source.
-3. Publish `/build` to `gh-pages` via `npm run deploy` (this uses the `gh-pages` npm package to force-push the build contents to the `gh-pages` branch — no manual branch switching needed).
+**Every time we commit changes to `master`, the full deploy flow is:**
 
-Shortcut: `npm run deploy` alone runs the `predeploy` hook (`npm run build`) first, so after pushing `master` you only need `npm run deploy`.
+1. **Commit and push `master`:**
+   ```bash
+   git add <changed files>
+   git commit -m "<message>"
+   git push origin master
+   ```
 
-If `homepage` in `package.json` ever changes, rebuild — asset paths in `/build` are baked in at build time from that field.
+2. **Build from the just-pushed source:**
+   ```bash
+   npm run build
+   ```
+   This writes the compiled site to `/build/` (gitignored on `master`).
+
+3. **Switch to `gh-pages`** — `/build/` survives the branch switch because it's gitignored:
+   ```bash
+   git fetch origin gh-pages
+   git checkout gh-pages
+   ```
+
+4. **Replace the tracked contents of `gh-pages` with the fresh build:**
+   ```bash
+   git rm -rf asset-manifest.json index.html static/   # remove the previous deploy
+   cp -r build/* .                                     # copy new build output to repo root
+   rm -rf build                                        # keep the branch flat (build/ is not tracked)
+   ```
+   Only the compiled static files (`index.html`, `asset-manifest.json`, `static/...`) — plus a minimal `.gitignore` containing `node_modules` — should end up tracked on `gh-pages`. **Never commit `src/`, `public/`, `package.json`, `node_modules/`, or any source on this branch.**
+
+5. **Commit and push the deploy:**
+   ```bash
+   git add -A
+   git commit -m "deploy: <short note>"
+   git push origin gh-pages
+   ```
+
+6. **Switch back to `master`:**
+   ```bash
+   git checkout master
+   ```
+
+GitHub Pages will pick up the new commit on `gh-pages` within a minute or two and serve it at https://vinayak2112.github.io/portfolio/.
+
+**Shortcut:** `npm run deploy` automates steps 2–5 via the `gh-pages` npm package (force-pushes `build/` to `gh-pages` without a manual branch switch). Prefer this when you want to deploy without touching branches.
+
+If `homepage` in `package.json` ever changes, rebuild before deploying — asset paths in `/build/` are baked in at build time from that field.
 
 This is an unejected Create React App (react-scripts 5.0.1). No custom webpack/babel config; no linter beyond CRA's built-in ESLint (`react-app`, `react-app/jest`).
 
