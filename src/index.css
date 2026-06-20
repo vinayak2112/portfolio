@@ -128,22 +128,32 @@ nav .menu-btn,
   color: #000266;
 }
 .cv-btn2 {
-  width: 130px;
-  height: 35px;
+  width: 175px;
+  height: 44px;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #d0ff00;
-  box-shadow: 5px 10px 30px rgba(255, 2, 2, 0.137);
+  box-shadow: 0 8px 24px rgba(208, 255, 0, 0.35);
   border-radius: 10px;
   color: #000266;
   margin-left: 95px;
+  cursor: pointer;
+  transition: all ease 0.4s;
+}
+.cv-btn2:hover {
+  background-color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(208, 255, 0, 0.5);
 }
 .cv-btn2 button {
   background: transparent;
   border: none;
   color: #000266;
-  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
   cursor: pointer;
   font-size: 14px;
 }
