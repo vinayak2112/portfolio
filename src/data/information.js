@@ -144,6 +144,15 @@ export const projectsData = {
       highlights: ["Google Groups automation", "OAuth2 + RBAC", "recordType sync"],
       link: "https://github.com/vinayak2112",
     },
+    {
+      title: "Student Achievement Tracker (SAT)",
+      company: "Teach For India",
+      tech: "TypeScript • Express • Prisma • PostgreSQL • React • Vite • BullMQ • AWS ECS",
+      description:
+        "Owning and extending SAT, an enterprise TypeScript monorepo tracking student assessment data across 8 cities (28,000+ students, 433 schools). Express + Prisma + PostgreSQL REST API with Zod validation, a Vite + React 18 frontend, a BullMQ worker, a Salesforce sync service, and AWS ECS + S3/CloudFront CI/CD.",
+      highlights: ["28K+ students", "TypeScript monorepo", "AWS ECS CI/CD"],
+      link: "https://saturn.teachforindia.org/",
+    },
   ],
   personalProjects: [
     {
