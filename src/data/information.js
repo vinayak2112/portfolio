@@ -3,9 +3,9 @@
 // ============================================
 export const personalInfo = {
   name: "Vinayak Nandikole",
-  title: "Full-Stack Engineer - React, Node.js, MongoDB",
+  title: "Full-Stack Engineer | AI-Assisted Development & Automation",
   tagline:
-    "Shipping production web platforms serving up to 50K applicants/year at Teach For India — turning tangled enterprise workflows (Salesforce, OAuth, Algolia) into clean user-facing flows.",
+    "Building production web platforms serving up to 50K applicants/year at Teach For India, now growing into AI-assisted development and automation: Claude Code, agentic workflows, MCP, and CI/CD.",
   github: "https://github.com/vinnu9112",
   linkedin: "https://www.linkedin.com/in/vinayak-nandikole",
   email: "vinayaknandikole2158@gmail.com",
@@ -20,9 +20,9 @@ export const aboutData = {
   desktopHeading: "Professional Overview",
   mobileHeading: "About Me",
   paragraphs: [
-    "I'm a Full-Stack Engineer on the Teach For India Technology Team, owning end-to-end development across three flagship portals — Fellowship (up to 50K applicants/year), Volunteer, and Internship — that drive nationwide recruitment and operations.",
-    "My day-to-day is architecting async job pipelines with Bull + Redis, bidirectionally syncing Salesforce across 8+ objects, wiring multi-provider OAuth (Google/LinkedIn/OTP) via Passport.js, and building Algolia-powered search, video proctoring, and Whisper-based transcription workflows on top of AWS S3.",
-    "I care about clean architecture, PM2 cluster-mode scalability for peak cycles, feature-flagged rollouts, and turning messy enterprise workflows into flows non-technical teams can actually operate.",
+    "I'm a Full-Stack Engineer on the Teach For India Technology Team and a primary contributor (2,000+ commits) across three flagship portals (Fellowship, up to 50K applicants/year; Volunteer; and Internship) that drive nationwide recruitment and operations.",
+    "My core stack is React, Node.js, Express, MongoDB, Redis and Bull, with deep work in Salesforce integration (jsforce, bidirectional sync across 8+ objects), multi-provider OAuth via Passport.js, Algolia search, and an in-house assessment platform featuring video proctoring (TensorFlow.js) and Whisper transcription on AWS S3.",
+    "I'm increasingly focused on AI-assisted development and automation: building Claude Code workflows (slash commands, subagents, MCP), CI/CD pipelines, and an agentic multi-agent mesh (LangGraph + Claude). I care about clean architecture, reliability, and turning messy enterprise workflows into automated, dependable products.",
   ],
   cvFileName: "Vinayak_Nandikole.pdf",
 };
@@ -40,11 +40,11 @@ export const experienceData = {
       period: "Aug 2023 - Present",
       location: "Pune, India",
       highlights: [
-        "Owned full-stack development across three flagship portals — Fellowship (up to 50K applicants/year), Volunteer, and Internship; led the Volunteer Portal revamp end-to-end from UX design through production deployment",
-        "Architected async job processing with Bull + Redis across 20+ job types (Salesforce syncs, assessment scoring, data synchronization) on dedicated PM2-clustered workers separated from the API for peak-cycle scalability",
-        "Enhanced internal Kitchen admin tooling: automated Salesforce interview slot fetch with real-time capacity deduction; built a mock application system that exercises the full applicant waterfall for regression testing",
-        "Integrated Salesforce bidirectionally across 8+ objects with multi-provider auth (Google/LinkedIn OAuth, OTP) via Passport.js; automated DB operations cutting error rate by 15% and resolved 50+ production bugs across a 4-engineer team",
-        "Designed a feature-flag system (e.g., allowACOperations) governing runtime behavior of picklists and dashboard actions, enabling safe rollouts of operational changes without code deploys",
+        "Primary contributor (2,000+ commits) across three production portals (Fellowship up to 50K applicants/year, Volunteer, Internship); led the Volunteer matching-2.0 revamp end-to-end from UX design through production deployment",
+        "Co-built an in-house test/assessment engine (online test, Critical Thinking, Problem Solving) that retired a paid third-party vendor (AMCAT); built Bull-queue scoring, automated test-regeneration approvals, and idempotent abort/submit recovery",
+        "Owned the bidirectional Salesforce-MongoDB integration (jsforce) across 8+ objects with reusable picklist value-mapping, atomic upserts, and multi-provider OAuth (Google/LinkedIn, OTP) via Passport.js",
+        "Drove AI-assisted developer tooling and DevEx: Claude Code slash commands and subagents, MCP integrations (incl. Sentry MCP), and multiple technical BRDs that fed into implementation",
+        "Hardened production reliability under live traffic using Sentry, cutting error rate by 15% and resolving 50+ production bugs; enhanced the Kitchen admin dashboard (mock-application QA, interview-slot automation, feature-flag rollouts)",
       ],
     },
     {
@@ -98,33 +98,51 @@ export const projectsData = {
     {
       title: "Fellowship Application Portal",
       company: "Teach For India",
-      tech: "React 18 • Node.js • MongoDB • Material UI • AWS S3 • Whisper",
+      tech: "React 18 • Node.js • MongoDB • Bull/Redis • TensorFlow.js • Whisper • AWS S3",
       description:
-        "Monorepo (Express server, React applicant portal, admin Kitchen dashboard) with cohort-scoped MongoDB collections for year-over-year data isolation. Includes COCO-based video proctoring, WebM recorder with Whisper transcription, and dynamic PDF generation for offer letters and CVs.",
+        "A 3-app monorepo (Express REST API, React 18 applicant portal, React admin Kitchen) with cohort-scoped MongoDB collections for year-over-year isolation. Includes an in-house assessment engine, browser-based video proctoring with in-browser face verification (TensorFlow.js), a recorder with Whisper transcription, and dynamic PDF generation.",
       highlights: [
         "50K applicants / year",
-        "20% faster load time",
-        "Video proctoring + Whisper",
+        "In-house assessment engine",
+        "Video proctoring (TensorFlow.js)",
       ],
       link: "https://apply.teachforindia.org/",
     },
     {
+      title: "CATIA Agentic Mesh",
+      company: "Freelance",
+      tech: "Python • LangGraph • Claude API • MCP • FastAPI • Docker • Azure",
+      description:
+        "A multi-agent mesh that automates the SDLC for CATIA customizations across Jira, Confluence, HP-ALM, GitLab and ServiceNow, orchestrated with LangGraph and Claude (cost-aware Opus/Sonnet/Haiku routing). Structural human-in-the-loop with RBAC-gated approvals and 7 MCP servers; now in active use by the client's team.",
+      highlights: ["Multi-agent / LangGraph", "7 MCP servers", "In active use"],
+      link: "https://github.com/vinayak2112",
+    },
+    {
+      title: "Salesforce Version Control & AI DevEx (CORE)",
+      company: "Teach For India",
+      tech: "GitHub Actions • Salesforce DX • sfdx-git-delta • Claude Code • MCP",
+      description:
+        "Built Git version control and CI/CD from scratch for a production Salesforce org used by a 3-developer non-Git team: delta-only deploys, JWT auth, and configurable Apex test strategies. Authored 10 Claude Code slash commands plus a deploy-impact-reviewer subagent and a Salesforce DX MCP integration so non-Git users ship safely.",
+      highlights: ["10 slash commands", "Delta CI/CD", "Deploy-risk subagent"],
+      link: "https://github.com/vinayak2112",
+    },
+    {
       title: "Volunteer Management System",
       company: "Teach For India",
-      tech: "React • Algolia • Salesforce • Bull Queue",
+      tech: "React • Material UI • Algolia • Salesforce • Bull Queue",
       description:
-        "Re-architected with action-first UX — chips/cards replacing dropdowns, global search with auto-suggestions, step-wise auto-scroll. Built an Algolia-Salesforce sync microservice that auto-removes fulfilled, inactive, or referred opportunities from the index via queue-based processing.",
-      highlights: ["36% fewer clicks", "Algolia sync", "Unified indices"],
+        "Led the matching-2.0 revamp (3,500+ line rebuild): an action-first wizard with chips/cards replacing dropdowns, global search with auto-suggestions, and step-wise auto-scroll. Engineered an Algolia search layer (filter-DSL adapter, query deduplication, faceted availability counts) over a queue-based Salesforce sync.",
+      highlights: ["36% fewer clicks", "Algolia search", "matching-2.0 revamp"],
       link: "https://volunteer.teachforindia.org/",
     },
     {
-      title: "Impacted Internship Program",
+      title: "Crossroads Integration Layer",
       company: "Teach For India",
-      tech: "React (CRA) • Node.js • Salesforce",
+      tech: "Node.js • Express • Google Directory API • OAuth2 • Algolia",
       description:
-        "Sibling CRA app with referral-gated access via unique reference keys for invite-only onboarding and pre-filled application flows to reduce drop-off. Backend classification toggle distinguishes internship vs volunteer applicants, sharing infrastructure with the Volunteer Portal for zero-duplication sync.",
-      highlights: ["Referral-gated", "Shared infra", "Pre-filled flow"],
-      link: "https://impacted.teachforindia.org/?applicantID=1234",
+        "Built a Salesforce-driven Google Workspace Directory API microservice (bulk-assign REST endpoint, lazy OAuth2 client, parallel batching, idempotent conflict handling, RBAC) that auto-provisions fellow accounts into Google Groups, plus a recordType-aware Salesforce-to-Algolia sync unifying volunteer and internship search.",
+      highlights: ["Google Groups automation", "OAuth2 + RBAC", "recordType sync"],
+      link: "https://github.com/vinayak2112",
     },
   ],
   personalProjects: [
@@ -183,6 +201,18 @@ export const achievementsData = {
     },
   ],
   certifications: [
+    {
+      iconKey: "anthropic",
+      name: "Claude 101",
+      issuer: "Anthropic",
+      link: "https://verify.skilljar.com/c/yg6mzekfwv5q",
+    },
+    {
+      iconKey: "anthropic",
+      name: "Claude Code 101",
+      issuer: "Anthropic",
+      link: "https://www.anthropic.com/",
+    },
     {
       iconKey: "awsCert",
       name: "AWS Academy Cloud Foundations",

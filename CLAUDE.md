@@ -11,6 +11,14 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Deployment workflow
 
+Live at **https://vinayak2112.github.io/portfolio/** via GitHub Pages (serves the `gh-pages` branch).
+
+**Canonical flow (use this):** make changes on `master`, commit + push `master`, then run `npm run deploy` — it builds and force-publishes `/build` to `gh-pages` in one command, no manual branch switching. The 6-step branch dance documented below is a fallback only; you normally never need it.
+
+**Resume-sync rule:** the hosted CV download is `src/images/resume.pdf` (imported directly in `AboutMe.jsx`; `aboutData.cvFileName` is only the suggested download filename). Whenever Vinayak green-lights a new resume PDF, **overwrite `src/images/resume.pdf`** with it, refresh any changed copy in `src/data/information.js`, then commit `master` + run `npm run deploy`. Keep the portfolio's projects/about/skills aligned with the resume's positioning.
+
+---
+
 The live site is hosted at **https://vinayak2112.github.io/portfolio/** via GitHub Pages, which serves the `gh-pages` branch of this repo.
 
 Two branches, two jobs:
