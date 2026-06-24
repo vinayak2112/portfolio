@@ -220,7 +220,7 @@ export const achievementsData = {
       iconKey: "anthropic",
       name: "Claude Code 101",
       issuer: "Anthropic",
-      link: "https://www.anthropic.com/",
+      link: "https://verify.skilljar.com/c/5o4gnsvq43d7",
     },
     {
       iconKey: "awsCert",
